@@ -20,8 +20,16 @@
                         <li><a href="{{route('register')}}">Register</a></li>
                     @endif
                 @endguest
+                @if (auth()->user())
+                    <li><a href="#">{{auth()->user()->name}}</a></li>
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST" class="inline">
+                            @csrf
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                @endif
                 @if (auth()->user() && !auth()->user()->is_admin)
-                    <li><a href="#">Book</a></li>
                     <li><a href="#">Profile</a></li>
                 @endif
                 @if (auth()->user() && auth()->user()->is_admin)

@@ -45,7 +45,7 @@ body {
     margin-left: 20px;
 }
 
-.navbar-menu a {
+.navbar-menu a, button {
     color: #fff;
     text-decoration: none;
     padding: 14px 20px;
@@ -55,12 +55,12 @@ body {
     transition: color 0.3s ease;
 }
 
-.navbar-menu a:hover {
+.navbar-menu a:hover, button:hover {
     background-color: #575757;
     border-radius: 4px;
 }
 
-.navbar-menu a::before {
+.navbar-menu a::before, button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -75,7 +75,7 @@ body {
     transform: scale(1.2);
 }
 
-.navbar-menu a:hover::before {
+.navbar-menu a:hover::before, button:hover::before {
     opacity: 1;
     transform: scale(1);
 }
