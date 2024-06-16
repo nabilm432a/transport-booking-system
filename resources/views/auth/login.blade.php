@@ -7,6 +7,51 @@
                         Login
                     </h1>
                     <div class="w-full flex-1 mt-8">
+
+                        <div class="mx-auto max-w-xs">
+                            <form action="{{route('login')}}" method="POST">
+                                @csrf
+                                <input
+                                    id="email"
+                                    name="email"
+                                    class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                                    type="email" placeholder="Email" />
+                                <input
+                                    id="password"
+                                    name="password"
+                                    class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                                    type="password" placeholder="Password" />
+                                <button
+                                    type="submit"
+                                    class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                                    <span class="ml-3">
+                                    Log in
+                                </span>
+                                </button>
+                            </form>
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger text-red-600">
+                                    {{ $errors->first('email') }}
+                                </div>
+                            @endif
+
+                            <a href="{{route('register')}}"><button
+                                    class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                                <span class="ml-3">
+                                Not Registered? Sign up
+                            </span>
+                                </button></a>
+                        </div>
+
+
+                        <div class="my-12 border-b text-center">
+                            <div
+                                class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
+                                Sign in with Google
+                            </div>
+                        </div>
+
                         <div class="flex flex-col items-center">
                             <button
                                 class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
@@ -33,47 +78,7 @@
 
                         </div>
 
-                        <div class="my-12 border-b text-center">
-                            <div
-                                class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
-                                Sign up with Email
-                            </div>
-                        </div>
-
-                        <div class="mx-auto max-w-xs">
-                            <form action="{{route('login')}}" method="POST">
-                                @csrf
-                                <input
-                                    id="email"
-                                    name="email"
-                                    class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                                    type="email" placeholder="Email" />
-                                <input
-                                    id="password"
-                                    name="password"
-                                    class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                                    type="password" placeholder="Password" />
-                                <button
-                                    type="submit"
-                                    class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
-                                    <span class="ml-3">
-                                    Log in
-                                </span>
-                                </button>
-                            </form>
-                            <a href="{{route('register')}}"><button
-                                class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
-                                <span class="ml-3">
-                                Not Registered? Sign up
-                            </span>
-                            </button></a>
-                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="flex-1 bg-indigo-100 text-center hidden lg:flex" style="border-radius: 2px">
-                <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat" style="display: flex; justify-content: center; align-items: center">
-                     <img src="{{asset('images/3160612.jpg')}}" alt="Train image" style="max-width: 100%; max-height: 100%">
                 </div>
             </div>
         </div>

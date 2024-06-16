@@ -6,11 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transport</title>
+    <script>
+        function showAlert() {
+            alert('Contact Page does not yet Exist');
+        }
+    </script>
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal" style="background-image: url('{{asset("images/3160611.jpg")}}')">
     <nav class="navbar ">
         <div class="navbar-container">
-            <a href="#" class="navbar-logo">Transport Site</a>
+            <a href="{{route('home')}}" class="navbar-logo hover:text-black transition-all duration-300 ease-in-out">BD-Travels</a>
             <ul class="navbar-menu">
 
                 <li><a href="{{route('home')}}">Home</a></li>
@@ -35,7 +40,7 @@
                 @if (auth()->user() && auth()->user()->is_admin)
                     <li><a href="#">Admin Panel</a></li>
                 @endif
-                <li><a href="#">Contact</a></li>
+                <li><a href="#" onclick="showAlert()">Contact</a></li>
             </ul>
             <div class="navbar-toggle">
                 <span class="navbar-toggle-bar"></span>
