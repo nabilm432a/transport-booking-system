@@ -26,7 +26,9 @@
                     @endif
                 @endguest
                 @if (auth()->user())
-                    <li><a href="#">{{auth()->user()->name}}</a></li>
+                    @if (!auth()->user()->is_admin)
+                    <li><a href="{{ route('dashboard') }}">{{auth()->user()->name}}</a></li>
+                    @endif
                     <li>
                         <form action="{{ route('logout') }}" method="POST" class="inline">
                             @csrf
@@ -35,12 +37,14 @@
                     </li>
                 @endif
                 @if (auth()->user() && !auth()->user()->is_admin)
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="{{ route('profile') }}">Profile</a></li>
                 @endif
                 @if (auth()->user() && auth()->user()->is_admin)
                     <li><a href="#">Admin Panel</a></li>
                 @endif
+                @if (auth()->user() && !auth()->user()->is_admin || !auth()->user())
                 <li><a href="#" onclick="showAlert()">Contact</a></li>
+                @endif
             </ul>
             <div class="navbar-toggle">
                 <span class="navbar-toggle-bar"></span>

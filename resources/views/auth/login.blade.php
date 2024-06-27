@@ -42,7 +42,11 @@
                                 Not Registered? Sign up
                             </span>
                                 </button></a>
+                            <a href="{{ route('password.request') }}">Forgot Password</a>
                         </div>
+                        @if(session('status'))
+                            <p class="text-red-600">{{ session('status') }}</p>
+                        @endif
 
 
                         <div class="my-12 border-b text-center">
@@ -53,7 +57,7 @@
                         </div>
 
                         <div class="flex flex-col items-center">
-                            <button
+                            <a href="{{ url('login/google') }}"><button
                                 class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                                 <div class="bg-white p-2 rounded-full">
                                     <svg class="w-4" viewBox="0 0 533.5 544.3">
@@ -74,7 +78,7 @@
                                 <span class="ml-4">
                                 Login with Google
                             </span>
-                            </button>
+                            </button></a>
 
                         </div>
 
