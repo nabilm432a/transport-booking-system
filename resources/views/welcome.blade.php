@@ -9,7 +9,7 @@
         @endif
         @if (auth()->user() && !auth()->user()->is_admin || !auth()->user())
         <div style="margin-top: 50px">
-            <a href="#"><button
+            <a href="{{ route('book') }}"><button
             class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-1/4 py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                 <span>
                     Book A Ticket
@@ -26,7 +26,7 @@
 
         <div style="margin-top: 20px; display: flex">
             <div style="margin-right: 20px">
-                <a href="#"><button
+                <a href="{{ route('guide') }}"><button
                 class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                     <span>
                         Travel Guide
@@ -64,7 +64,7 @@
 
             @if (auth()->user() && auth()->user()->is_admin)
                 <div>
-                    <a href="#"><button
+                    <a href="{{ route('admin_panel') }}"><button
                             class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                         <span>
                             Admin Panel

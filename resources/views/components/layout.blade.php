@@ -40,7 +40,7 @@
                     <li><a href="{{ route('profile') }}">Profile</a></li>
                 @endif
                 @if (auth()->user() && auth()->user()->is_admin)
-                    <li><a href="#">Admin Panel</a></li>
+                    <li><a href="{{ route('admin_panel') }}">Admin Panel</a></li>
                 @endif
                 @if (auth()->user() && !auth()->user()->is_admin || !auth()->user())
                 <li><a href="#" onclick="showAlert()">Contact</a></li>
