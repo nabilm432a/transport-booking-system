@@ -42,7 +42,9 @@
                                 Not Registered? Sign up
                             </span>
                                 </button></a>
-                            <a href="{{ route('password.request') }}">Forgot Password</a>
+                            <div style="margin-top: 10px">
+                            <a class="transition-link" href="{{ route('password.request') }}">Forgot Password?</a>
+                            </div>
                         </div>
                         @if(session('status'))
                             <p class="text-red-600">{{ session('status') }}</p>
