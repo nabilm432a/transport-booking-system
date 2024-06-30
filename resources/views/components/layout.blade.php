@@ -15,7 +15,7 @@
 <body class="bg-gray-100 font-sans leading-normal tracking-normal" style="background-image: url('{{asset("images/3160611.jpg")}}')">
     <nav class="navbar ">
         <div class="navbar-container">
-            <a href="{{route('home')}}" class="navbar-logo hover:text-black transition-all duration-300 ease-in-out">BD-Travels</a>
+            <a href="{{route('home')}}" class="navbar-logo hover:text-black transition-all duration-300 ease-in-out">Travels</a>
             <ul class="navbar-menu">
 
                 <li><a href="{{route('home')}}">Home</a></li>
