@@ -36,6 +36,10 @@ Route::get('/admin_panel', function () {
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('login/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
+Route::get('/contact', [ProfileController::class, 'view_contact_form'])->name('contact');
+Route::post('/contact', [ProfileController::class, 'update_contact'])->name('contact');
+Route::get('/passport', [ProfileController::class, 'view_passport_form'])->name('passport');
+Route::post('/passport', [ProfileController::class, 'update_passport'])->name('passport');
 
 require __DIR__.'/auth.php';
 
