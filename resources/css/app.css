@@ -129,3 +129,26 @@ body {
     color: deepskyblue;
     text-decoration: underline;
 }
+
+.wrapper {
+    position: relative;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.sidebar {
+    border-radius: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000; /* Ensure the sidebar is above the content */
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
