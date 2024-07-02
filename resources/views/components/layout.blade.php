@@ -1,4 +1,5 @@
 @vite('resources/css/app.css')
+@vite('resources/js/app.js')
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +16,6 @@
             <a href="{{route('home')}}" class="navbar-logo hover:text-black transition-all duration-300 ease-in-out">Travels</a>
 
             <ul class="navbar-menu">
-{{--                <li><a href="#" id="toggle-sidebar">Sidebar</a></li>--}}
                 <li><a href="{{route('home')}}">Home</a></li>
 
                 @guest()
@@ -59,14 +59,7 @@
 
     </div>
     <script>
-        // document.getElementById('toggle-sidebar').addEventListener('click', function(event) {
-        //     event.stopPropagation();
-        //     document.querySelector('.sidebar').classList.toggle('active');
-        // });
-
         const sidebar = document.querySelector('.sidebar');
-
-
         document.addEventListener('mousemove', function(event) {
 
             const mouseX = event.clientX;

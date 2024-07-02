@@ -52,11 +52,12 @@ body {
     display: block;
     position: relative;
     z-index: 1;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, color 0.3s ease;
 }
 
 .navbar-menu a:hover, button:hover {
-    background-color: #575757;
+    background-color: midnightblue;
+    color: white;
     border-radius: 4px;
 }
 
@@ -67,7 +68,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #575757;
+    background-color: midnightblue;
     border-radius: 4px;
     z-index: -1;
     opacity: 0;
@@ -80,7 +81,7 @@ body {
     transform: scale(1);
 }
 
-/* Navbar toggle (for mobile) */
+
 .navbar-toggle {
     display: none;
     flex-direction: column;
@@ -94,7 +95,15 @@ body {
     margin: 4px 0;
 }
 
-/* Responsive design */
+#name-anchor {
+    transition: color 0.3s ease;
+}
+
+#name-anchor:hover {
+    color: #3869d4;
+}
+
+
 @media (max-width: 768px) {
     .navbar-menu {
         display: none;
@@ -132,7 +141,7 @@ body {
 
 .wrapper {
     position: relative;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh;
 }
 
 .sidebar {
@@ -145,10 +154,50 @@ body {
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    z-index: 1000; /* Ensure the sidebar is above the content */
+    z-index: 1000;
 }
 
 .sidebar.active {
     transform: translateX(0);
 }
 
+/* Modal*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

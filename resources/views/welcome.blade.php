@@ -2,7 +2,7 @@
     <section style="margin-left: 50px; margin-top: 50px">
         @if (auth()->user())
         <div>
-        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-purple-500 from-sky-400">Welcome </span>{{auth()->user()->name}}</h1>
+        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-purple-500 from-sky-400">Welcome </span><a id="name-anchor" href="{{ route('profile') }}">{{auth()->user()->name}}</a></h1>
         </div>
         @else
             <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-purple-500 from-sky-400">Welcome </span></h1>

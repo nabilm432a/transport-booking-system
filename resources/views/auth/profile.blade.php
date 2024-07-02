@@ -55,15 +55,27 @@
             </div>
         </div>
 
+        <div id="floating-window" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Delete Account?</h2>
+                <p>Warning: This is permanent</p>
+                <p>All your data will be lost.</p>
+                <a href="#"><button
+                        class="mt-5 tracking-wide font-semibold bg-red-500 text-black w-full py-2 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                        <span>
+                            Delete
+                        </span>
+                    </button></a>
+            </div>
+        </div>
         <div class="bg-indigo-500 w-2/4" style="margin-right: 20px; padding:20px; margin-left: 30px; margin-top: 20px; border-radius: 8px">
-            <h1>Have any feedbacks?</h1>
-
             <div>
                 <div style="margin-top: 10px; margin-right: 10px">
-                    <a href="#"><button
-                            class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-2 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                    <a href="#"><button id="open-modal-btn"
+                            class="mt-5 tracking-wide font-semibold bg-red-500 text-black w-full py-2 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                             <span>
-                                Send Feedback
+                                Delete Account
                             </span>
 
                         </button></a>
