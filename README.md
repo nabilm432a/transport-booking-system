@@ -32,4 +32,14 @@ Then in another terminal, run:
 
 This will launch the server in your localhost:8000 domain
 
-CSE470
+Test Accounts
+
+User:
+
+email: jake@gmail.com
+password: 12345678
+
+Admin:
+
+email: blake@gmail.com
+password: 12345678

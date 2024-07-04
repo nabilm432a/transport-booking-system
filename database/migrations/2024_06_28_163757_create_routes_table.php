@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('routes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('source')->constrained('locations');
+            $table->unsignedBigInteger('destination')->constrained('locations');
+            $table->unsignedBigInteger('vehicle_id')->constrained('transports');
+            $table->float('price')->default('0');
+            $table->dateTime('departure_time');
+            $table->dateTime('arrival_time');
         });
     }
 

@@ -65,10 +65,10 @@
             const mouseX = event.clientX;
 
             if (mouseX <= 20) {
-                sidebar.classList.add('active'); // Show sidebar
+                sidebar.classList.add('active');
             } else {
                 if (mouseX >= 250) {
-                    sidebar.classList.remove('active'); // Hide sidebar
+                    sidebar.classList.remove('active');
                 }
             }
         });
