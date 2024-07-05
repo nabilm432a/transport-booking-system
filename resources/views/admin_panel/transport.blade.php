@@ -51,9 +51,6 @@
                         <td style="text-align: center;">{{$transport->seats}}</td>
                         <td style="text-align: center;">{{$transport->type}}</td>
                         <td style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-{{--                            <a href="{{route('transports.edit', $transport)}}"><button style="background-color: #9ca3af; color: white;">--}}
-{{--                                    Edit--}}
-{{--                                </button></a>--}}
                             <form
                                 method="POST" action="{{route('transports.edit', $transport)}}">
                                 @csrf

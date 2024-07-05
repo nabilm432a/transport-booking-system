@@ -12,7 +12,7 @@ class NoticeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         $notices = Notice::all();
         return view('admin_panel.notice', compact('notices'));
@@ -21,7 +21,7 @@ class NoticeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('admin_panel.notices.create');
     }
@@ -29,7 +29,7 @@ class NoticeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(\Illuminate\Http\Request $request)
+    public function store(\Illuminate\Http\Request $request): \Illuminate\Http\RedirectResponse
     {
         try {
             Notice::create([
@@ -54,7 +54,7 @@ class NoticeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Notice $notice)
+    public function edit(Notice $notice): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('admin_panel.notices.edit', compact('notice'));
     }
@@ -62,7 +62,7 @@ class NoticeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(\Illuminate\Http\Request $request, Notice $notice)
+    public function update(\Illuminate\Http\Request $request, Notice $notice): \Illuminate\Http\RedirectResponse
     {
         try {
             $notice->update([
