@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\Record;
 use App\Http\Requests\StoreRecordRequest;
 use App\Http\Requests\UpdateRecordRequest;
+use App\Models\Route;
+use App\Models\Transport;
+use Illuminate\Database\QueryException;
 
 class RecordController extends Controller
 {
@@ -13,7 +17,8 @@ class RecordController extends Controller
      */
     public function index()
     {
-        //
+        $records = Record::all();
+        return view('admin_panel.record', compact('records'));
     }
 
     /**
@@ -21,13 +26,16 @@ class RecordController extends Controller
      */
     public function create()
     {
-        //
+        $locations = Location::all();
+        $routes = Route::all();
+        $transports = Transport::all();
+        return view('admin_panel.records.create', compact('locations', 'routes', 'transports'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRecordRequest $request)
+    public function store(\Illuminate\Http\Request $request)
     {
         //
     }
@@ -51,7 +59,7 @@ class RecordController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRecordRequest $request, Record $record)
+    public function update(\Illuminate\Http\Request $request, Record $record)
     {
         //
     }

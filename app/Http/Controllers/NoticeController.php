@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Notice;
 use App\Http\Requests\StoreNoticeRequest;
 use App\Http\Requests\UpdateNoticeRequest;
+use Illuminate\Database\QueryException;
 
 class NoticeController extends Controller
 {
@@ -13,7 +14,8 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        //
+        $notices = Notice::all();
+        return view('admin_panel.notice', compact('notices'));
     }
 
     /**
@@ -21,15 +23,24 @@ class NoticeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin_panel.notices.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreNoticeRequest $request)
+    public function store(\Illuminate\Http\Request $request)
     {
-        //
+        try {
+            Notice::create([
+                'body' => $request->input('body'),
+                'heading' => $request->input('heading'),
+            ]);
+            $message = "Successfully inserted";
+        } catch (QueryException $e) {
+            $message = "Failed to insert";
+        }
+        return redirect()->route('notices.index')->with('message', $message);
     }
 
     /**
@@ -45,15 +56,24 @@ class NoticeController extends Controller
      */
     public function edit(Notice $notice)
     {
-        //
+        return view('admin_panel.notices.edit', compact('notice'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateNoticeRequest $request, Notice $notice)
+    public function update(\Illuminate\Http\Request $request, Notice $notice)
     {
-        //
+        try {
+            $notice->update([
+                'body' => $request->input('body'),
+                'heading' => $request->input('heading'),
+            ]);
+            $message = "Successfully Modified";
+        } catch (QueryException $e) {
+            $message = "An error occurred trying to edit the data";
+        }
+        return redirect()->route('notices.index')->with('message', $message);
     }
 
     /**
@@ -61,6 +81,11 @@ class NoticeController extends Controller
      */
     public function destroy(Notice $notice)
     {
-        //
+        try {
+            $notice->delete();
+            return redirect()->route('notices.index');
+        } catch(QueryException) {
+            return redirect()->route('notices.index')->with('error', 'An error occurred while processing your request.');
+        }
     }
 }

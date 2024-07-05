@@ -13,7 +13,8 @@ class RouteController extends Controller
      */
     public function index()
     {
-        //
+        $routes = Route::all();
+        return view('admin_panel.route', compact('routes'));
     }
 
     /**
@@ -27,7 +28,7 @@ class RouteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRouteRequest $request)
+    public function store(\Illuminate\Http\Request $request)
     {
         //
     }
@@ -51,7 +52,7 @@ class RouteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRouteRequest $request, Route $route)
+    public function update(\Illuminate\Http\Request $request, Route $route)
     {
         //
     }
