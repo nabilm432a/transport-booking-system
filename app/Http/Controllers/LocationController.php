@@ -33,9 +33,9 @@ class LocationController extends Controller
     {
         try {
             Location::create([
-                'station' => $request->input('license'),
-                'country' => $request->input('seats'),
-                'region' => $request->input('type'),
+                'station' => $request->input('station'),
+                'country' => $request->input('country'),
+                'region' => $request->input('region'),
                 'city' => $request->input('city'),
             ]);
             $message = "Successfully inserted";
@@ -68,9 +68,7 @@ class LocationController extends Controller
     {
         try {
             $location->update([
-                'station' => $request->input('license'),
-                'country' => $request->input('seats'),
-                'region' => $request->input('type'),
+                'station' => $request->input('station'),
                 'city' => $request->input('city'),
             ]);
             $message = "Successfully Modified";

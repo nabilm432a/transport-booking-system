@@ -19,16 +19,18 @@
                                     id="license"
                                     name="license"
                                     class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                                    type="text" placeholder="License Number" />
+                                    type="text" placeholder="License Number" required/>
+
                                 <input
                                     id="seats"
                                     name="seats"
                                     class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                                    type="number" min="0" placeholder="Number of Seats" />
+                                    type="number" min="0" placeholder="Number of Seats" required/>
+
                                 <select id="type" name="type" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5">
-                                    <option value="bus">Bus</option>
-                                    <option value="airplane">Airplane</option>
-                                    <option value="train">Train</option>
+                                    <option value="Bus">Bus</option>
+                                    <option value="Airplane">Airplane</option>
+                                    <option value="Train">Train</option>
                                 </select>
 
                                 <button

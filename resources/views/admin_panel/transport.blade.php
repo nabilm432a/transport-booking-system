@@ -28,7 +28,7 @@
 
         <div>
             @if(session('message'))
-                <p class="text-black">{{session('message')}}</p>
+                <p class="text-red-600">{{session('message')}}</p>
             @endif
         </div>
 

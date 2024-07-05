@@ -15,7 +15,7 @@
             </div>
 
             <div style="margin-right: 20px; margin-left: 20px; width: 70%">
-                <a href="#"><button
+                <a href="{{ route('routes.index') }}"><button
                         class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                     <span>
                         Route Management

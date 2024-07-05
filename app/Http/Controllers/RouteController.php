@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\Route;
 use App\Http\Requests\StoreRouteRequest;
 use App\Http\Requests\UpdateRouteRequest;
+use App\Models\Transport;
 
 class RouteController extends Controller
 {
@@ -22,7 +24,9 @@ class RouteController extends Controller
      */
     public function create()
     {
-        //
+        $locations = Location::all();
+        $transports = Transport::all();
+        return view('admin_panel.routes.create', compact('locations', 'transports'));
     }
 
     /**
@@ -46,7 +50,7 @@ class RouteController extends Controller
      */
     public function edit(Route $route)
     {
-        //
+        return view('admin_panel.routes.edit', $route);
     }
 
     /**

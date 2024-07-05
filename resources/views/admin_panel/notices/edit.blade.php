@@ -1,6 +1,6 @@
 <x-layout>
     <div style="margin-left: 30px; margin-top: 20px">
-        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-blue-800 from-blue-300">Transports</span></h1>
+        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-blue-800 from-blue-300">Notices</span></h1>
     </div>
 
     <div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
@@ -20,13 +20,13 @@
                                     id="heading"
                                     name="heading"
                                     class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                                    type="text" placeholder="{{ $notice->heading }}" />
+                                    type="text" placeholder="{{ $notice->heading }}" required/>
 
                                 <textarea
                                     id="body"
                                     name="body"
                                     class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                                    type="text" min="0" placeholder="{{ $notice->body }}" rows="5" style="resize: none;"> </textarea>
+                                    type="text" min="0" placeholder="{{ $notice->body }}" rows="5" style="resize: none;" required> </textarea>
 
                                 <button
                                     type="submit"

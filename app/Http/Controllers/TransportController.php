@@ -67,8 +67,6 @@ class TransportController extends Controller
         try {
             $transport->update([
                 'license' => $request->input('license'),
-                'seats' => $request->input('seats'),
-                'type' => $request->input('type'),
             ]);
             $message = "Successfully Modified";
         } catch (QueryException $e) {
