@@ -24,9 +24,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('auth.profile');
     })->name('profile');
 
-    Route::get('/dashboard', function () {
-        return view('auth.dashboard');
-    })->name('dashboard');
+    Route::get('dashboard',[\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/book', function () {
         return view('booking.home');

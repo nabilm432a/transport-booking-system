@@ -4,8 +4,14 @@
     </div>
     <div style="display: flex;">
         <div class="bg-indigo-500" style="margin-right: 20px; padding:20px; margin-left: 30px; margin-top: 20px; border-radius: 8px">
-            <h1>Notice Board</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cum enim eos eveniet iste laborum molestiae natus officiis porro quae, recusandae, sunt? Amet autem consequatur dolores enim quisquam similique tempora?</p>
+            <h1 class="text-white" style="text-align: center">Notice Board</h1>
+        @foreach($notices as $notice)
+            <a href="{{ route('notices.show', $notice) }}"><div class="opacity-100 transition duration-300 ease-in-out hover:opacity-50" style="background-color: #a0aec0; border-radius: 8px; width: 100%">
+                <h2 style="text-align: center">{{$notice->heading}}</h2>
+                <br>
+                <p style="text-align: center; margin-left: 5px; margin-bottom: 10px">{{ Str::words($notice->body, 10, '...') }}</p>
+            </div></a>
+        @endforeach
         </div>
         @if (!auth()->user()->is_admin)
         <div class="bg-indigo-500" style="border-radius: 8px; margin-right: 20px; margin-top: 20px; padding:20px; ">

@@ -48,7 +48,7 @@ class NoticeController extends Controller
      */
     public function show(Notice $notice)
     {
-        //
+        return view('admin_panel.notices.show', compact('notice'));
     }
 
     /**
