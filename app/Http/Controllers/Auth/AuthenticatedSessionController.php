@@ -30,8 +30,11 @@ class AuthenticatedSessionController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect()->intended(route('dashboard', [], false));
+            if(!auth()->user()->is_admin) {
+                return redirect()->intended(route('dashboard', [], false));
+            } else {
+                return redirect()->intended(route('home', [], false));
+            }
         }
 
         throw ValidationException::withMessages([

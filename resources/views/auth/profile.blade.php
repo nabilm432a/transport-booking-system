@@ -24,7 +24,7 @@
             <h1>Update Information</h1>
             <div style="display: flex">
                 <div style="margin-top: 10px; margin-right: 10px">
-                    <a href="{{ route('passport') }}"><button
+                    <a href="{{ route('passport')}}"><button
                             class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-2 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                         @if(!auth()->user()->passport == null)
                             <span>
@@ -39,7 +39,7 @@
                 </div>
 
                 <div style="margin-top: 10px; margin-right: 10px">
-                    <a href="{{ route('contact') }}"><button
+                    <a href="{{ route('contact')}}"><button
                             class="mt-5 tracking-wide font-semibold bg-blue-400 text-black w-full py-2 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                             @if(!auth()->user()->passport == null)
                                 <span>
@@ -52,7 +52,16 @@
                             @endif
                         </button></a>
                 </div>
+
+
             </div>
+
+            <div>
+                @if(session('message'))
+                    <p class="text-red-600">{{session('message')}}</p>
+                @endif
+            </div>
+
         </div>
 
         <div id="floating-window" class="modal">
