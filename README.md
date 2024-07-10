@@ -8,13 +8,16 @@ Prerequisites
 
 Make sure you have the following installed and updated:
 
-    Node.js and npm
+    Node.js
     php
-    Xampp apache server with MySql should be running
+    Xampp apache server with MySql
 
+After cloning the repository:
+First Run `npm install`
 
+Then `composer install`
 
-After cloning the repository , run the migrations using the following commands in the terminal:
+After that run the following in the terminal
 
     php artisan migrate
     php artisan db:seed
