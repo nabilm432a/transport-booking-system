@@ -19,8 +19,7 @@ Then `composer install`
 
 After that run the following in the terminal
 
-    php artisan migrate
-    php artisan db:seed
+    php artisan migrate:refresh --seed
 
 
 Launching the Server

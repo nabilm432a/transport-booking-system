@@ -26,14 +26,14 @@
                     </span>
                 </button></a></li>
 
-                <li><a href="#"><button
+                <li><a href="{{ route('transports.index') }}"><button
                     class="mt-5 tracking-wide font-semibold bg-blue-300 text-black w-full py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                     <span class="ml-3">
                         Manage Transports
                     </span>
                 </button></a></li>
 
-                <li><a href="#"><button
+                <li><a href="{{ route('notices.index') }}"><button
                     class="mt-5 tracking-wide font-semibold bg-blue-300 text-black w-full py-4 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                     <span class="ml-3">
                         Manage Notices

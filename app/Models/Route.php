@@ -11,7 +11,7 @@ class Route extends Model
 
     protected $table = 'routes';
 
-    protected $fillable = [];
+    protected $fillable = ['source', 'destination', 'vehicle_id', 'price', 'departure_time', 'arrival_time'];
 
     public function source_location (): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

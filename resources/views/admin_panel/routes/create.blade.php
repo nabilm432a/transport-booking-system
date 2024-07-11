@@ -16,19 +16,22 @@
                             <form action="{{route('routes.store')}}" method="POST">
                                 @csrf
 
-                                <select id="source" name="source" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5">
+                                <select id="source" name="source" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" required>
+                                    <option value="">Select Source</option>
                                     @foreach($locations as $location)
                                         <option value="{{ $location->id }}">{{ $location->station }}, {{ $location->region }}, {{ $location->country }}</option>
                                     @endforeach
                                 </select>
 
-                                <select id="destination" name="destination" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5">
+                                <select id="destination" name="destination" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" required>
+                                    <option value="">Select Destination</option>
                                     @foreach($locations as $location)
                                         <option value="{{ $location->id }}">{{ $location->station }}, {{ $location->region }}, {{ $location->country }}</option>
                                     @endforeach
                                 </select>
 
-                                <select id="vehicle" name="vehicle" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5">
+                                <select id="vehicle_id" name="vehicle_id" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" required>
+                                    <option value="">Select Vehicle</option>
                                     @foreach($transports as $transport)
                                         <option value="{{ $transport->id }}">{{ $transport->license }}, Type: {{ $transport->type }}, Seats: {{ $transport->seats }}</option>
                                     @endforeach
@@ -69,8 +72,49 @@
 
                         </div>
 
+                        @if ($errors->any())
+                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                                <strong class="font-bold">Whoops!</strong>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                     </div>
                 </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const sourceSelect = document.getElementById('source');
+                        const destinationSelect = document.getElementById('destination');
+
+                        sourceSelect.addEventListener('change', function() {
+                            const selectedValue = sourceSelect.value;
+                            Array.from(destinationSelect.options).forEach(option => {
+                                if (option.value === selectedValue) {
+                                    option.disabled = true;
+                                } else {
+                                    option.disabled = false;
+                                }
+                            });
+                        });
+
+                        destinationSelect.addEventListener('change', function() {
+                            const selectedValue = destinationSelect.value;
+                            Array.from(sourceSelect.options).forEach(option => {
+                                if (option.value === selectedValue) {
+                                    option.disabled = true;
+                                } else {
+                                    option.disabled = false;
+                                }
+                            });
+                        });
+                    });
+                </script>
+
             </div>
         </div>
     </div>

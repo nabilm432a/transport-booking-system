@@ -7,6 +7,7 @@ use App\Models\Route;
 use App\Http\Requests\StoreRouteRequest;
 use App\Http\Requests\UpdateRouteRequest;
 use App\Models\Transport;
+use Illuminate\Database\QueryException;
 
 class RouteController extends Controller
 {
@@ -34,8 +35,31 @@ class RouteController extends Controller
      */
     public function store(\Illuminate\Http\Request $request)
     {
-        //
+        $request->validate([
+            'source' => 'required|exists:locations,id',
+            'destination' => 'required|different:source|exists:locations,id',
+            'vehicle_id' => 'required|exists:transports,id',
+            'price' => 'required|numeric|min:0',
+            'departure_time' => 'required|after:now',
+            'arrival_time' => 'required|after:departure_time',
+        ]);
+
+        try {
+            $data = [
+                'source' => $request->input('source'),
+                'destination' => $request->input('destination'),
+                'vehicle_id' => $request->input('vehicle_id'),
+                'price' => $request->input('price'),
+                'departure_time' => $request->input('departure_time'),
+                'arrival_time' => $request->input('arrival_time'),
+            ];
+            Route::create($data);
+            return redirect()->route('routes.index')->with('message', 'New Route Created');
+        } catch (QueryException $e) {
+            return redirect()->route('routes.index')->with('message', 'Failed to create route');
+        }
     }
+
 
     /**
      * Display the specified resource.
@@ -50,7 +74,7 @@ class RouteController extends Controller
      */
     public function edit(Route $route)
     {
-        return view('admin_panel.routes.edit', $route);
+        return view('admin_panel.routes.edit', compact('route'));
     }
 
     /**
@@ -58,7 +82,23 @@ class RouteController extends Controller
      */
     public function update(\Illuminate\Http\Request $request, Route $route)
     {
-        //
+
+        $request->validate([
+            'price' => 'required|numeric|min:0',
+            'departure_time' => 'required|after:now',
+            'arrival_time' => 'required|after:departure_time',
+        ]);
+        try {
+            $route->update([
+                'price' => $request->input('price'),
+                'departure_time' => $request->input('departure_time'),
+                'arrival_time' => $request->input('arrival_time'),
+            ]);
+            $message = "Successfully Modified";
+        } catch (QueryException $e) {
+            $message = "An error occurred trying to edit the data";
+        }
+        return redirect()->route('routes.index')->with('message', $message);
     }
 
     /**
@@ -66,6 +106,12 @@ class RouteController extends Controller
      */
     public function destroy(Route $route)
     {
-        //
+        try {
+            $route->delete();
+            return redirect()->route('routes.index')->with('message', 'Route deleted successfully');
+        } catch (QueryException $e) {
+            Log::error('Failed to delete route: '.$e->getMessage());
+            return redirect()->route('routes.index')->with('message', 'Failed to delete route');
+        }
     }
 }
