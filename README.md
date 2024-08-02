@@ -22,6 +22,8 @@ After that run the following in the terminal
     php artisan migrate
     php artisan db:seed
 
+Download the [.env file](https://drive.google.com/file/d/131OJw4eJpxn27BCcQjwZ83Qkfs2AviX9/view?usp=drive_link) and paste it in the root directory of the project
+    
 
 Launching the Server
 
