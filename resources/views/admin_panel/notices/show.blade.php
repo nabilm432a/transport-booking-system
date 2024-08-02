@@ -4,12 +4,12 @@
     </div>
 
     <div style="display: flex; justify-content: center; align-items: center; height: 80%;">
-        <div class="text-white w-2/3 h-2/3" style="border-radius: 8px; padding: 1.5rem;background-color: white">
-            <div style="margin-bottom: 10px; background-color: grey; border-radius: 8px; text-align: center">
-                <h2 class="mb-2 ml-2 mt-0 text-2xl font-medium leading-tight text-primary">{{$notice->heading}}</h2>
+        <div class="text-white w-2/3 h-2/3 bg-blue-300" style="border-radius: 8px; padding: 1.5rem;">
+            <div style="margin-bottom: 10px; background-color: white; border-radius: 8px; text-align: center">
+                <h2 class="mb-2 ml-2 mt-0 text-2xl font-medium leading-tight text-primary text-black">{{$notice->heading}}</h2>
             </div>
 
-            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: white">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <p class="text-black">{{$notice->body}}</p>
 
             </div>

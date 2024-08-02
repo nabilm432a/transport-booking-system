@@ -43,6 +43,8 @@ Route::post('/contact', [ProfileController::class, 'update_contact'])->name('con
 Route::get('/passport', [ProfileController::class, 'view_passport_form'])->name('passport');
 Route::post('/passport', [ProfileController::class, 'update_passport'])->name('passport');
 
+Route::get('/availability', [\App\Http\Controllers\RealTimeTrackController::class, 'view_list'])->name('availability');
+
 Route::resource('transports',\App\Http\Controllers\TransportController::class);
 Route::resource('notices',\App\Http\Controllers\NoticeController::class);
 Route::resource('records',\App\Http\Controllers\RecordController::class);

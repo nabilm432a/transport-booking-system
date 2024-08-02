@@ -17,7 +17,7 @@ class NoticeSeeder extends Seeder
         [
             [
                'heading' => 'Welcome to Transport',
-               'body' => 'We hope you have a wonderful experience browsing this website'
+               'body' => 'We hope you have a wonderful browsing experience'
             ],
             [
                'heading' => 'Project Progress',
