@@ -48,4 +48,14 @@ class ProfileController extends Controller
         }
         return redirect()->route('profile')->with('message', $message);
     }
+
+    public function destroy()
+    {
+        $user = Auth::user();
+        Auth::logout();
+
+        $user->delete();
+
+        return redirect()->route('home');
+    }
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('records', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('user_id')->constrained('users');
+            $table->unsignedBigInteger('user_id')->constrained('users')->onDelete('cascade');
             $table->unsignedBigInteger('route_id')->constrained('routes');
             $table->unique(['user_id', 'route_id']);
         });

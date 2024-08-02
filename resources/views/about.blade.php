@@ -7,19 +7,19 @@
         <img src="{{asset("images/bracu_logo.webp")}}" style="width: 220px; height: 200px;">
     </div>
     <div style="display: flex; margin-left: 30px; margin-top: 20px; align-items: center; justify-content: center">
-        <div class="border-b-2 border-r-2 border-green-200 hover:text-white" style="margin: 20px; background-color: #48bb78; border-radius: 8px; padding: 20px; transition: color 0.3s ease">
+        <div class="border-b-2 border-r-2 border-green-200 hover:text-white" style="margin: 20px; background-color: #48bb78; border-radius: 8px; padding: 20px; transition: color 0.3s ease; user-select: none;">
             <p>Name: Ashraf Mahir</p>
             <p>ID: </p>
         </div>
-        <div class="border-b-2 border-r-2 border-green-200 hover:text-white" style="margin: 20px; background-color: #48bb78; border-radius: 8px; padding: 20px; transition: color 0.3s ease">
+        <div class="border-b-2 border-r-2 border-green-200 hover:text-white" style="margin: 20px; background-color: #48bb78; border-radius: 8px; padding: 20px; transition: color 0.3s ease; user-select: none;">
             <p>Name: Mitul Roy Tanny</p>
             <p>ID: </p>
         </div>
-        <div class="border-b-2 border-r-2 border-green-200 hover:text-white" style="margin: 20px; background-color: #48bb78; border-radius: 8px; padding: 20px; transition: color 0.3s ease">
+        <div class="border-b-2 border-r-2 border-green-200 hover:text-white" style="margin: 20px; background-color: #48bb78; border-radius: 8px; padding: 20px; transition: color 0.3s ease; user-select: none;">
             <p>Name: Nabil Hossain Chowdhury</p>
             <p>ID: 21241006</p>
         </div>
-        <div class="border-b-2 border-r-2 border-green-200 hover:text-white" style="margin: 20px; background-color: #48bb78; border-radius: 8px; padding: 20px; transition: color 0.3s ease">
+        <div class="border-b-2 border-r-2 border-green-200 hover:text-white" style="margin: 20px; background-color: #48bb78; border-radius: 8px; padding: 20px; transition: color 0.3s ease; user-select: none;">
             <p>Name: Rukaya Zaman</p>
             <p>ID: </p>
         </div>

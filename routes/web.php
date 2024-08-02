@@ -42,6 +42,7 @@ Route::get('/contact', [ProfileController::class, 'view_contact_form'])->name('c
 Route::post('/contact', [ProfileController::class, 'update_contact'])->name('contact');
 Route::get('/passport', [ProfileController::class, 'view_passport_form'])->name('passport');
 Route::post('/passport', [ProfileController::class, 'update_passport'])->name('passport');
+Route::delete('/delete', [ProfileController::class, 'destroy'])->name('user_destroy');
 
 Route::get('/availability', [\App\Http\Controllers\RealTimeTrackController::class, 'view_list'])->name('availability');
 

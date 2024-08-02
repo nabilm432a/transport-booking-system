@@ -81,13 +81,17 @@
         <div class="bg-indigo-500 w-2/4" style="margin-right: 20px; padding:20px; margin-left: 30px; margin-top: 20px; border-radius: 8px">
             <div>
                 <div style="margin-top: 10px; margin-right: 10px">
-                    <a href="#"><button id="open-modal-btn"
-                            class="mt-5 tracking-wide font-semibold bg-red-500 text-black w-full py-2 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
-                            <span>
-                                Delete Account
-                            </span>
+                    <form action="{{ route('user_destroy') }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button id="open-modal-btn" type="submit"
+                                class="mt-5 tracking-wide font-semibold bg-red-500 text-black w-full py-2 rounded-lg hover:bg-blue-400 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                                <span>
+                                    Delete Account
+                                </span>
 
-                        </button></a>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
